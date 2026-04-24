@@ -1,0 +1,11 @@
+{
+  "model_name": "openai/gpt-oss-120b",
+  "renderer_name": "gpt_oss_medium_reasoning",
+  "n_problems": 198,
+  "max_tokens": 8192,
+  "main_results_path": "/tmp/tinker-examples/reasoning_theater/gpqa_gpt_oss_120b/results.jsonl",
+  "n_sc_samples": 8,
+  "psc_trigger_fraction": 0.1,
+  "psc_budget_multiplier": 2.0,
+  "avg_cot_len_from_main": 2351
+}

@@ -1,0 +1,11 @@
+{
+  "model_name": "Qwen/Qwen3-8B",
+  "renderer_name": "qwen3_disable_thinking",
+  "n_problems": 198,
+  "max_tokens": 4096,
+  "main_results_path": "/tmp/tinker-examples/reasoning_theater/gpqa_8b_nothink/results.jsonl",
+  "n_sc_samples": 8,
+  "psc_trigger_fraction": 0.1,
+  "psc_budget_multiplier": 2.0,
+  "avg_cot_len_from_main": 1601
+}

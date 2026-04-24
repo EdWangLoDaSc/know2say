@@ -1,0 +1,78 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "gpqa_experts",
+  "dataset_name": "gpqa",
+  "dataset_size": 28556,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/Idavidrein/gpqa@633f5ee89ab8ad4522a9f850766b73f62147ffdd/gpqa_experts.csv": {
+      "num_bytes": 26636,
+      "checksum": null
+    }
+  },
+  "download_size": 26636,
+  "features": {
+    "Name": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Domain": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Description of Expertise": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Qualifications": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Qualification Progress": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Num Correct Expert Validations": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "Num Correct Non-Expert Validations": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "Expert Accuracy on Questions Written": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Non-Expert Accuracy on Questions Written": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Expert Accuracy": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Non-Expert Accuracy": {
+      "dtype": "float64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 55192,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 28556,
+      "num_examples": 60,
+      "dataset_name": "gpqa"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

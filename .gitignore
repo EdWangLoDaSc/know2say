@@ -1,0 +1,53 @@
+# ── macOS ────────────────────────────────────────────────────────────────────
+.DS_Store
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+
+# ── HuggingFace / model caches ───────────────────────────────────────────────
+.hf_cache/
+.cache/
+
+# ── LaTeX build artefacts ────────────────────────────────────────────────────
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# ── Editor / IDE ─────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Claude Code ──────────────────────────────────────────────────────────────
+.claude/
+
+# ── Logs & scratch ───────────────────────────────────────────────────────────
+*.log
+scratch/
+tmp/
+
+# ── Paper artefacts (NIPS / arXiv / generated figures) ───────────────────────
+# This repo hosts code + experiment data only; paper sources live elsewhere.
+NIPS_Paper/
+arxiv_paper/
+figures/
+paper.tex
+ref.bib
+reasoning_theater_6panel.*
