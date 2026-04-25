@@ -11,13 +11,13 @@ Two modes:
 
 Usage:
     # EFA-oracle simulation (upper bound)
-    python -m tinker_cookbook.recipes.reasoning_theater.baee mode=simulate strategy=efa_oracle
+    python -m baee mode=simulate strategy=efa_oracle
 
     # PSC-triggered simulation (deployable)
-    python -m tinker_cookbook.recipes.reasoning_theater.baee mode=simulate strategy=psc
+    python -m baee mode=simulate strategy=psc
 
     # Online mode (requires TINKER_API_KEY)
-    python -m tinker_cookbook.recipes.reasoning_theater.baee mode=online n_problems=5
+    python -m baee mode=online n_problems=5
 """
 
 import json
@@ -444,7 +444,7 @@ async def run_baee_online(
     """
     import tinker.types as types
     from tinker_cookbook import renderers as rmod
-    from tinker_cookbook.recipes.reasoning_theater.experiment import try_extract_and_grade
+    from experiment import try_extract_and_grade
 
     ground_truth = problem["answer"]
 
@@ -484,7 +484,7 @@ async def run_baee_online(
         # Grade majority answer
         is_correct = False
         if majority_ans:
-            from tinker_cookbook.recipes.reasoning_theater.experiment import safe_grade
+            from experiment import safe_grade
             is_correct = safe_grade(majority_ans, ground_truth, config.grader, config.grader_timeout)
 
         checkpoint_details.append({
@@ -532,7 +532,7 @@ async def _async_online_main(config: BAEEConfig):
     import tinker
     from tinker_cookbook import model_info, renderers
     from tinker_cookbook.recipes.math_rl.math_env import MathEnv
-    from tinker_cookbook.recipes.reasoning_theater.experiment import load_problems
+    from experiment import load_problems
     from tinker_cookbook.tokenizer_utils import get_tokenizer
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname)s %(message)s")

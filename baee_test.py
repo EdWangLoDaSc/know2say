@@ -2,7 +2,7 @@
 
 import pytest
 
-from tinker_cookbook.recipes.reasoning_theater.baee import (
+from baee import (
     BAEEConfig,
     BAEEReport,
     BAEEResult,

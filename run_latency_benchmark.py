@@ -15,7 +15,7 @@ import numpy as np
 import tinker
 import tinker.types as types
 from tinker_cookbook import renderers
-from tinker_cookbook.recipes.reasoning_theater.experiment import (
+from experiment import (
     ExperimentConfig, load_problems, try_extract_and_grade,
 )
 from tinker_cookbook.recipes.math_rl.math_env import MathEnv

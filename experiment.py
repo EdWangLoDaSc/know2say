@@ -16,8 +16,8 @@ References:
   - "Spike/Sparse/Sink" (2603.05498)
 
 Usage:
-    python -m tinker_cookbook.recipes.reasoning_theater.experiment
-    python -m tinker_cookbook.recipes.reasoning_theater.experiment model_name=Qwen/Qwen3-32B n_problems=100
+    python -m experiment
+    python -m experiment model_name=Qwen/Qwen3-32B n_problems=100
 """
 
 import asyncio

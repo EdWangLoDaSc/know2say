@@ -12,8 +12,8 @@ If the gap is robust → supports distribution-shift / truncation-artifact expla
 If only one suffix shows it → supports format-mismatch explanation.
 
 Usage:
-    python -m tinker_cookbook.recipes.reasoning_theater.efa_suffix_ablation
-    python -m tinker_cookbook.recipes.reasoning_theater.efa_suffix_ablation \
+    python -m efa_suffix_ablation
+    python -m efa_suffix_ablation \
         model_name=Qwen/Qwen3-32B n_problems=50
 """
 
@@ -31,7 +31,7 @@ import tinker.types as types
 from tinker_cookbook import model_info, renderers
 from tinker_cookbook.recipes.math_rl.math_env import MathEnv
 from tinker_cookbook.recipes.math_rl.math_grading import extract_boxed
-from tinker_cookbook.recipes.reasoning_theater.experiment import (
+from experiment import (
     _load_math500,
     safe_grade,
     try_extract_and_grade,

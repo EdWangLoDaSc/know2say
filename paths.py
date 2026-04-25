@@ -1,7 +1,8 @@
-"""Centralized path configuration for Reasoning Theater experiments.
+"""Centralized path configuration for Know2Say experiments.
 
 Override defaults via environment variables:
-  TINKER_COOKBOOK      — path to tinker-cookbook package
+  TINKER_COOKBOOK      — path to a tinker-cookbook checkout (defaults to the
+                          vendored copy under ``vendor/`` inside this repo).
   REASONING_THEATER_RESULTS — root dir for experiment results (default: /tmp/...)
 """
 
@@ -9,9 +10,12 @@ import os
 
 # ── External package ──────────────────────────────────────────────────────────
 
+# The repo ships a frozen copy of `tinker_cookbook` under `vendor/` so that
+# `git clone` is enough to run the figure-regeneration scripts without
+# additional setup.  Set TINKER_COOKBOOK if you'd rather use a system install.
 TINKER_COOKBOOK: str = os.environ.get(
     "TINKER_COOKBOOK",
-    os.path.expanduser("~/tinker-cookbook"),
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "vendor"),
 )
 
 # ── Directories ───────────────────────────────────────────────────────────────

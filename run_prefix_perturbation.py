@@ -26,7 +26,7 @@ paths.setup_path()
 import tinker
 import tinker.types as types
 from tinker_cookbook import model_info, renderers
-from tinker_cookbook.recipes.reasoning_theater.experiment import (
+from experiment import (
     ExperimentConfig,
     load_problems,
     run_psc,

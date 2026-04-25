@@ -16,7 +16,7 @@ import paths
 
 paths.setup_path()
 
-from tinker_cookbook.recipes.reasoning_theater.baseline_experiment import (  # noqa: E402
+from baseline_experiment import (  # noqa: E402
     BaselineConfig,
     _async_main,
 )

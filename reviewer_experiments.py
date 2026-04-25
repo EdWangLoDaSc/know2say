@@ -6,9 +6,9 @@ Reviewer response experiments:
    analyze self-agreement on wrong problems.
 
 Usage:
-    python -m tinker_cookbook.recipes.reasoning_theater.reviewer_experiments \
+    python -m reviewer_experiments \
         --experiment fine_grained --n_problems 50
-    python -m tinker_cookbook.recipes.reasoning_theater.reviewer_experiments \
+    python -m reviewer_experiments \
         --experiment psc_raw --n_problems 100
 """
 
@@ -25,7 +25,7 @@ import tinker.types as types
 
 from tinker_cookbook import renderers
 from tinker_cookbook.tokenizer_utils import get_tokenizer
-from tinker_cookbook.recipes.reasoning_theater.experiment import (
+from experiment import (
     ExperimentConfig,
     MathEnv,
     load_problems,

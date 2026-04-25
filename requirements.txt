@@ -1,0 +1,22 @@
+# ── Tinker SDK (closed-source, install via pip; needs API key) ──────────────
+tinker>=0.16.0
+
+# ── Dependencies of the vendored tinker_cookbook (vendor/tinker_cookbook/) ──
+chz
+cloudpickle
+datasets
+numpy
+pillow
+rich
+termcolor
+torch
+torchvision
+transformers>=4.57.6,<5.0.0
+blobfile
+anyio
+pylatexenc
+sympy
+
+# ── This repo's own analysis & figure code ──────────────────────────────────
+matplotlib>=3.7
+scipy

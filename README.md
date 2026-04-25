@@ -8,19 +8,41 @@ Code for the paper **"The Detection–Extraction Gap: Models Know the Answer Bef
 
 ## Setup
 
-### Dependencies
+```bash
+git clone git@github.com:EdWangLoDaSc/know2say.git
+cd know2say
+pip install -r requirements.txt
+```
 
-This project relies on `tinker-cookbook` (internal package). Set its path via an environment variable before running any script:
+`requirements.txt` pulls the `tinker` SDK plus `tinker_cookbook`'s runtime
+dependencies (`chz`, `datasets`, `transformers`, `sympy`, `pylatexenc`, …).
+
+### tinker-cookbook (vendored)
+
+A frozen subset of [`tinker_cookbook`](https://github.com/thinking-machines-lab/tinker-cookbook)
+ships under [`vendor/tinker_cookbook/`](vendor/) — `paths.setup_path()`
+prepends this directory to `sys.path`, so no extra install step is needed.
+To use a system-installed cookbook instead, override:
 
 ```bash
 export TINKER_COOKBOOK=/path/to/tinker-cookbook
 ```
 
-If the variable is unset, `paths.py` falls back to the hardcoded default path.
+### Tinker SDK API key
+
+Sampling from real models requires a Thinking Machines API key (see
+<https://auth.thinkingmachines.ai/sign-up>):
+
+```bash
+export TINKER_API_KEY=tk-...
+```
+
+Without this you can still re-run all offline analysis and re-render every
+figure from the experiment-result JSONLs already checked in.
 
 ### Results directory
 
-Experiment outputs go to `/tmp/tinker-examples/reasoning_theater/` by default. Override with:
+Experiment outputs go to `/tmp/tinker-examples/reasoning_theater/` by default:
 
 ```bash
 export REASONING_THEATER_RESULTS=/your/preferred/results/dir
@@ -69,7 +91,8 @@ export REASONING_THEATER_RESULTS=/your/preferred/results/dir
 ├── regenerate_figures.py            # Batch re-render main figures
 ├── regenerate_appendix_figures.py   # Batch re-render appendix figures
 │
-└── data/                            # Raw benchmark data (GPQA, etc.)
+├── data/                            # Raw benchmark data (GPQA, etc.)
+└── vendor/tinker_cookbook/          # Frozen subset of upstream cookbook
 ```
 
 > **Note.** This repository ships *code and experiment results only*.

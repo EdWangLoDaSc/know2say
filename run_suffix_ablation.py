@@ -15,7 +15,7 @@ import paths
 
 paths.setup_path()
 
-from tinker_cookbook.recipes.reasoning_theater.efa_suffix_ablation import (  # noqa: E402
+from efa_suffix_ablation import (  # noqa: E402
     SuffixAblationConfig,
     _async_main,
 )

@@ -12,7 +12,7 @@ paths.setup_path()
 import tinker
 import tinker.types as types
 from tinker_cookbook import renderers
-from tinker_cookbook.recipes.reasoning_theater.experiment import (
+from experiment import (
     ExperimentConfig, load_problems, run_psc, safe_grade, _is_mc_benchmark,
 )
 from tinker_cookbook.tokenizer_utils import get_tokenizer
