@@ -18,7 +18,7 @@ from plot_style import PAL, MARKERS, LS, COL_GENUINE, COL_WRONG  # noqa: E402
 COL_PRE = COL_GENUINE
 COL_POST = "#fdae6b"
 
-BASE = paths.PAPER_DIR
+BASE = paths.RESULTS_DIR
 OUT = paths.FIGURES_DIR
 def load(p):
     with open(p) as f: return [json.loads(l) for l in f if l.strip()]

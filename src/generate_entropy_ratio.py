@@ -63,7 +63,8 @@ ax.axvspan(0.5, 1.0, color='#44aa44', alpha=0.04)
 ax.grid(False)
 
 fig.tight_layout()
+os.makedirs(paths.FIGURES_DIR, exist_ok=True)
 for ext in ['pdf', 'png']:
-    fig.savefig(os.path.join(f"{BASE}/figures", f'fig_entropy_ratio.{ext}'))
+    fig.savefig(os.path.join(paths.FIGURES_DIR, f'fig_entropy_ratio.{ext}'))
 plt.close(fig)
 print('Saved fig_entropy_ratio')

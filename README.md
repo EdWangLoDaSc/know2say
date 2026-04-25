@@ -54,46 +54,83 @@ export REASONING_THEATER_RESULTS=/your/preferred/results/dir
 
 ```
 .
-├── paths.py                         # Path config (edit defaults here)
-├── plot_style.py                    # Shared matplotlib palette & rcParams
+├── README.md
+├── requirements.txt
+├── .gitignore
 │
-├── experiment.py                    # Core measurement protocols
-├── analysis.py                      # Offline analysis + LaTeX tables
-├── baee.py                          # Black-box Adaptive Early Exit policy
-├── baee_test.py                     # Sanity tests for BAEE
-├── dashboard.py                     # Interactive exploration of results
+├── src/                             # All Python code lives here
+│   ├── paths.py                     # Path config (edit defaults here)
+│   ├── plot_style.py                # Shared matplotlib palette + rcParams
+│   │
+│   ├── experiment.py                # Core measurement protocols
+│   ├── baee.py                      # Black-box Adaptive Early Exit policy
+│   ├── baee_test.py                 # Sanity tests for BAEE
+│   ├── baseline_experiment.py       # Prefix-free SC baselines
+│   ├── analysis.py                  # Offline analysis + LaTeX tables
+│   ├── dashboard.py                 # Interactive exploration of results
+│   ├── theta_frontier_figure.py     # BAEE θ sweep + Pareto frontier
+│   ├── efa_suffix_ablation.py       # EFA suffix-ablation runner
+│   ├── reviewer_experiments.py      # Supplementary reviewer experiments
+│   │
+│   ├── run_experiment.py            # Main runner (MATH / GPQA / AIME)
+│   ├── run_baselines.py             # Prefix-free baselines runner
+│   ├── run_humaneval.py             # HumanEval (code) experiment
+│   ├── run_latency_benchmark.py     # Full-CoT vs BAEE latency
+│   ├── run_suffix_ablation.py       # EFA suffix ablation (MATH)
+│   ├── run_suffix_ablation_gpqa.py  # EFA suffix ablation (GPQA)
+│   ├── run_prefix_perturbation.py       # Prefix perturbation (MATH, f=0.10)
+│   ├── run_prefix_perturbation_f50.py   # Prefix perturbation (MATH, f=0.50)
+│   ├── run_prefix_perturbation_gpqa.py  # Prefix perturbation (GPQA)
+│   │
+│   ├── generate_figures.py          # Main MATH-500 figures
+│   ├── generate_figures_aime.py     # AIME-2024 figures
+│   ├── generate_figures_gpqa.py     # GPQA figures
+│   ├── generate_humaneval_figures.py
+│   ├── generate_fig2_main.py        # Fig 2 — 1×4 main panel
+│   ├── generate_hero.py             # Hero figure (case study + gap)
+│   ├── generate_entropy.py          # Entropy dynamics
+│   ├── generate_entropy_ratio.py    # Pre / post-commit entropy ratio
+│   ├── generate_gap.py              # Detection–extraction gap (wrapfigure)
+│   ├── generate_commitment_map.py
+│   ├── generate_theater_map.py
+│   ├── regenerate_figures.py        # Batch re-render main figures
+│   └── regenerate_appendix_figures.py
 │
-├── run_experiment.py                # Main runner (MATH / GPQA / AIME)
-├── run_baselines.py                 # Prefix-free baseline runner
-├── run_humaneval.py                 # HumanEval (code) experiment
-├── run_latency_benchmark.py         # Full-CoT vs BAEE latency
-├── run_suffix_ablation.py           # EFA suffix ablation (MATH)
-├── run_suffix_ablation_gpqa.py      # EFA suffix ablation (GPQA)
-├── run_prefix_perturbation.py       # Prefix perturbation (MATH, f=0.10)
-├── run_prefix_perturbation_f50.py   # Prefix perturbation (MATH, f=0.50)
-├── run_prefix_perturbation_gpqa.py  # Prefix perturbation (GPQA)
+├── results/                         # All experiment outputs
+│   ├── analysis.json                # Aggregated stats
+│   ├── qwen3_32b_thinking_full500/  # MATH-500 × 5 model configs
+│   ├── qwen3_32b_no_thinking_full500/
+│   ├── qwen3_8b_thinking_full500/
+│   ├── qwen3_8b_no_thinking_full500/
+│   ├── gpt_oss_120b_full500/
+│   ├── gpqa_32b_think/              # GPQA-Diamond × 5
+│   ├── gpqa_32b_nothink/
+│   ├── gpqa_8b_think/
+│   ├── gpqa_8b_nothink/
+│   ├── gpqa_gpt_oss_120b/
+│   ├── humaneval_32b_think/         # HumanEval × 4
+│   ├── humaneval_32b_nothink/
+│   ├── humaneval_8b_think/
+│   ├── humaneval_8b_nothink/
+│   ├── aime24_32b_think/             # AIME-2024 × 5
+│   ├── aime24_32b_nothink/
+│   ├── aime24_8b_think/
+│   ├── aime24_8b_nothink/
+│   ├── aime24_gpt_oss/
+│   ├── baselines_gpqa_8b_nothink/    # SC-8 baselines
+│   ├── baselines_gpqa_gpt_oss/
+│   └── belief_runs/
 │
-├── generate_figures.py              # Main MATH-500 figures
-├── generate_figures_aime.py         # AIME-2024 figures
-├── generate_figures_gpqa.py         # GPQA figures
-├── generate_humaneval_figures.py    # HumanEval figures
-├── generate_fig2_main.py            # Fig 2 — 1×4 main panel
-├── generate_hero.py                 # Hero figure (case study + gap)
-├── generate_entropy.py              # Entropy dynamics
-├── generate_entropy_ratio.py        # Pre / post-commit entropy ratio
-├── generate_gap.py                  # Detection-extraction gap wrapfigure
-├── generate_commitment_map.py       # Commitment map wrapfigure
-├── generate_theater_map.py          # Theater-map scatter
-│
-├── theta_frontier_figure.py         # BAEE θ sweep + Pareto frontier
-├── efa_suffix_ablation.py           # EFA suffix ablation analysis
-├── reviewer_experiments.py          # Supplementary experiments
-├── regenerate_figures.py            # Batch re-render main figures
-├── regenerate_appendix_figures.py   # Batch re-render appendix figures
-│
-├── data/                            # Raw benchmark data (GPQA, etc.)
+├── data/                            # Raw benchmark data (GPQA, …)
 └── vendor/tinker_cookbook/          # Frozen subset of upstream cookbook
 ```
+
+> **How to run.** All scripts are invoked from inside `src/`:
+> ```bash
+> cd src
+> python regenerate_figures.py            # re-render the main figures
+> python run_experiment.py --preset 32b-think
+> ```
 
 > **Note.** This repository ships *code and experiment results only*.
 > The LaTeX paper sources (NIPS + arXiv variants) and the generated figure

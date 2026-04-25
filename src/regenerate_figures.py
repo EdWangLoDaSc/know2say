@@ -20,7 +20,7 @@ from plot_style import PAL, MARKERS, LS, COL_GENUINE, COL_WRONG  # noqa: E402
 # Post-commit uses a warmer orange than the generic theater color
 COL_POST = "#fdae6b"
 
-BASE = paths.PAPER_DIR
+BASE = paths.RESULTS_DIR
 OUTPUT = paths.FIGURES_DIR
 
 def load(p):
